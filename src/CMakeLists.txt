@@ -46,11 +46,19 @@ set(simplemailqt_HEADERS_PRIVATE
 #     common.h
 )
 
-add_library(SimpleMail2Qt${QT_VERSION_MAJOR} SHARED
-    ${simplemailqt_SRC}
-    ${simplemailqt_HEADERS}
-    ${simplemailqt_HEADERS_PRIVATE}
-)
+if (SIMPLE_MAIL_STATIC_BUILD)
+    add_library(SimpleMail2Qt${QT_VERSION_MAJOR} STATIC
+        ${simplemailqt_SRC}
+        ${simplemailqt_HEADERS}
+        ${simplemailqt_HEADERS_PRIVATE}
+    )
+else()
+    add_library(SimpleMail2Qt${QT_VERSION_MAJOR} SHARED
+        ${simplemailqt_SRC}
+        ${simplemailqt_HEADERS}
+        ${simplemailqt_HEADERS_PRIVATE}
+    )
+endif()
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing
 add_library(SimpleMail${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}::Core ALIAS SimpleMail2Qt${QT_VERSION_MAJOR})

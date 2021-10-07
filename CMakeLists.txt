@@ -18,7 +18,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 # to always look for includes there:
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-option(BUILD_SHARED_LIBS "Build in shared lib mode" ON)
+option(SIMPLE_MAIL_STATIC_BUILD "Build in static lib mode" ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
