@@ -47,7 +47,7 @@ add_definitions("-DLOCALSTATEDIR=\"${LOCALSTATEDIR}\"")
 
 set(CMAKE_INSTALL_LIBDIR "${CMAKE_INSTALL_PREFIX}/lib/${CMAKE_LIBRARY_ARCHITECTURE}" CACHE PATH "Output directory for libraries")
 
-option(BUILD_DEMOS "Build the demos" ON)
+option(BUILD_DEMOS "Build the demos" OFF)
 
 #
 # Custom C flags
